@@ -1,0 +1,32 @@
+@import '../../styles/vars.scss';
+
+.logo {
+  $margin-right: 10px;
+  $container-height: 60px;
+
+  display: flex;
+
+  height: $container-height;
+  margin-bottom: 20px;
+
+  &__circle {
+    width: $container-height;
+    height: 100%;
+    margin-right: $margin-right;
+
+    background-color: $gray-dark;
+    border-radius: 50%;
+  }
+
+  &__rect {
+    width: $container-height/2;
+    height: 100%;
+    margin-right: $margin-right;
+
+    background-color: $gray-dark;
+  }
+
+  &__rect-skew {
+    transform: skewX(-20deg);
+  }
+}

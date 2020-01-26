@@ -1,0 +1,14 @@
+@import '../../styles/vars.scss';
+
+.button {
+  height: 40px;
+  width: 140px;
+
+  background: linear-gradient(180deg, $light-blue 0%, $blue 100%);
+  border: none;
+  border-radius: $input-border-radius;
+
+  font-size: 18px;
+  color: $white;
+  cursor: pointer;
+}

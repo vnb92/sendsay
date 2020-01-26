@@ -1,0 +1,18 @@
+@import '../../../styles/vars.scss';
+
+.table__cell {
+  flex-grow: 1;
+  padding: 10px;
+
+  font-size: 16px;
+  font-weight: 300;
+  text-align: start;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:first-child {
+    padding-left: 0;
+  }
+}

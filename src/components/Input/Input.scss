@@ -1,0 +1,33 @@
+@import '../../styles/vars.scss';
+
+.input {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+
+  border-radius: $input-border-radius;
+  
+  &__field {
+    flex-grow: 1;
+    height: 40px;
+    padding: 5px;
+
+    border: $input-border-width solid $input-border-color;
+    border-radius: $input-border-radius;
+
+    font-size: 18px;
+
+    &::placeholder {
+      font-size: 16px;
+      color: $placeholder-color;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -18px;
+    left: 5px;
+
+    color: $error-red;
+  }
+}

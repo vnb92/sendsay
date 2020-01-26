@@ -1,0 +1,13 @@
+@import '../../../styles/vars.scss';
+
+.table {
+  &__head {
+    display: flex;
+    
+    height: 40px;
+    margin-bottom: 10px;
+    color: $label-color;
+
+    border-bottom: 1px solid $gray-dark;
+  }
+}

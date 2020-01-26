@@ -1,0 +1,29 @@
+@import '../../styles/vars.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+  padding: 20px;
+
+  background-color: $white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  .message {
+    height: 140px;
+    padding: 5px;
+    border-radius: $input-border-radius;
+    border: $input-border-width solid $input-border-color;
+    resize: vertical;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+}

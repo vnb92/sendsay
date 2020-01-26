@@ -1,0 +1,23 @@
+@import '../../styles/vars.scss';
+
+.attach-file {
+  max-width: 300px;
+
+  &__label {
+    font-size: 16px;
+    color: $blue;
+
+    cursor: pointer;
+  }
+
+  &__text {
+    margin-left: 5px;
+  }
+
+  &__input-hidden {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+}
