@@ -1,6 +1,7 @@
 @import '../../styles/vars.scss';
 
 .messages-list {
+  padding: 0 30px;
   &__title {
     margin-bottom: 20px;
   }
@@ -13,7 +14,7 @@
     }
 
     &__topic {
-      max-width: 400px;
+      max-width: 340px;
       text-align: start;
     }
 

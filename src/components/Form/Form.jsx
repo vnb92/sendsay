@@ -1,32 +1,20 @@
 import React from 'react';
-import { FormBlock } from '../FormBlock/FormBlock';
-import { Input } from '../Input/Input';
-import { Email } from '../Email/Email';
+import { Message } from '../Message/Message';
+import { Topic } from '../Topic/Topic';
 import { AttachFile } from '../AttachFile/AttachFile';
-import { Button } from '../Button/Button';
-import './Form.scss'
+import { Sender } from '../Sender/Sender';
+import { Recipient } from '../Recipient/Recipient';
+import { Submit } from '../Submit/Submit';
+import './Form.scss';
 
 export const Form = () => (
   <form className="form">
     <h2 className="form__title">Отправлялка сообщений</h2>
-
-    <Email label="От кого" />
-
-    <Email label="Кому" />
-
-    <FormBlock label="Тема письма">
-      <Input type="text" placeholder="Введите тему" />
-    </FormBlock>
-
-    <FormBlock label="Сообщение">
-      <textarea className="message"></textarea>
-    </FormBlock>
-
+    <Sender />
+    <Recipient />
+    <Topic />
+    <Message />
     <AttachFile />
-
-    <Button
-      type="submit"
-      text="Отправить"
-    />
+    <Submit />
   </form>
 );

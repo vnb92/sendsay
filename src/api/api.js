@@ -1,7 +1,9 @@
 import Sendsay from 'sendsay-api';
 
+export let api;
+
 export const initApi = () => {
-  const api =  new Sendsay({
+  api =  new Sendsay({
     auth: {
       login: 'bogatyrev_vl@mail.ru', 
       password: 'nu4Saequee',     

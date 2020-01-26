@@ -30,4 +30,13 @@
 
     color: $error-red;
   }
+
+  &-dual-left {
+    border-radius: $input-border-radius 0 0 $input-border-radius;
+    border-right-width: 0;
+  }
+
+  &-dual-right {
+    border-radius: 0 $input-border-radius $input-border-radius 0;
+  }
 }
