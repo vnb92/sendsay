@@ -6,7 +6,7 @@ export const File = ({ file, onRemove }) => (
   <div className="file">
     {file.size > 10000
       ? (
-        <div className="file__error-limit">файл превышает максимальный размер 5МБ</div>
+        <div className="file__error-limit">файл превышает макс. размер 5МБ</div>
       )
       : null
     }

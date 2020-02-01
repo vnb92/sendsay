@@ -2,46 +2,17 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Icon } from '../Icon/Icon';
 import './AttachFile.scss';
-import { addFile } from '../../store/actions/form';
+import { handleFiles } from '../../helpers/handleFiles';
 
 export const AttachFile = (props) => {
   const dispatch = useDispatch()
 
-  const handleLoadFile = (e, file) => {
-    const { name , size } = file;
-    const content = window.btoa(e.target.result);
-
-    const fileToSend = {
-      name,
-      size,
-      content,
-      encoding: 'base64'
-    }
-
-    dispatch(addFile(fileToSend))
-  }
-
   const handleChange = (e) => {
     e.stopPropagation();
 
-    const MB_MULTIPLIER = 1000000;
-    const MAX_FILE_SIZE_MB = 5;
+    const files = [...e.target.files];
 
-    const { files } = e.target;
-
-    const filesToArray = Object.values(files);
-
-    filesToArray.forEach(file => {
-      const { size } = file;
-      if (size * MB_MULTIPLIER > MAX_FILE_SIZE_MB) {
-        console.log('big file')
-      }
-
-      const reader = new FileReader()
-      reader.readAsArrayBuffer(file);
-      reader.onload = (e) => handleLoadFile(e, file);
-      reader.onerror = (e) => console.log('error', e.target.error);
-    });
+    handleFiles(dispatch, files)
   }
 
   return (
@@ -66,6 +37,7 @@ export const AttachFile = (props) => {
           id="file"
           name="file"
           multiple
+          accept=".jpg, .jpeg, .png, .md"
         />
       </label>
     </div>

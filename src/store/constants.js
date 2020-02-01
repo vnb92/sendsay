@@ -6,3 +6,5 @@ export const INPUT_TOPIC = 'INPUT_TOPIC';
 export const INPUT_MESSAGE = 'INPUT_MESSAGE';
 export const ADD_FILE = 'ADD_FILE';
 export const REMOVE_FILE = 'REMOVE_FILE';
+export const SET_IS_DRAG = 'SET_IS_DRAG';
+export const UNSET_IS_DRAG = 'UNSET_IS_DRAG';

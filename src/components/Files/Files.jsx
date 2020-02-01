@@ -13,6 +13,7 @@ export const Files = () => {
     <div className="files">
       {files.map(file => (
         <File
+          key={file.name + file.size}
           file={file}
           onRemove={handleRemoveFile(file.name)}
         />
