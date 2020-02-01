@@ -2,15 +2,15 @@ import * as C from '../constants';
 
 const defaultState = {
   sender: {
-    name: '',
-    email: '',
+    name: 'dfgd',
+    email: 'fsfs@mail.ru',
   },
   recipient: {
-    name: '',
-    email: ''
+    name: 'sdads',
+    email: 'dfsfsgs@mail.ru'
   },
-  topic: '',
-  message: '',
+  topic: 'dfddddd',
+  message: 'fsfsfsfsfs',
   files: [],
 }
 

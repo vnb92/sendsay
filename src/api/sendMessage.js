@@ -1,7 +1,7 @@
 import { api } from './api';
 
 export const sendMessage = ({ topic, sender, recipient, message, files }) => {
-  const options = JSON.stringify({
+  const options = {
     action : 'issue.send.test',
     letter : {
       subject : topic,
@@ -13,7 +13,7 @@ export const sendMessage = ({ topic, sender, recipient, message, files }) => {
     },
     sendwhen: 'test',
     mca: [recipient.email]
-  })
+  }
 
   api.request(options)
     .then(res => { console.log(res) })
