@@ -1,15 +1,23 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { File } from '../File/File';
 import './Files.scss';
+import { removeFile } from '../../store/actions/form';
 
-const mockFiles = ['file1.jpg', 'file2.scs'];
+export const Files = () => {
+  const dispatch = useDispatch()
+  const files = useSelector(state => state.form.files);
+  const handleRemoveFile = (fileName) => () => dispatch(removeFile(fileName));
 
-export const Files = () => (
-  <div className="files">
-      {mockFiles.map(file => (
+  return (
+    <div className="files">
+      {files.map(file => (
         <File
-          name={file.name}
+          file={file}
+          onRemove={handleRemoveFile(file.name)}
         />
       ))}
-  </div>
-);
+    </div>
+  )
+};
+

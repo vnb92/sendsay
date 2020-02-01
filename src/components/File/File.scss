@@ -1,6 +1,73 @@
-.file{
+@import '../../styles/vars.scss';
 
-  &__image-clip {
-    fill: red;
+.file {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    margin-top: 0;
+  }
+
+  &:nth-child(even),
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__error-limit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    font-size: 11px;
+    color: $error-red;
+  }
+
+  &__icon-clip {
+    fill: $gray-dark
+  }
+
+  &__name {
+    margin-right: auto;
+    margin-left: 10px;
+
+    font-size: 16px;
+  }
+
+  &__trash {
+    display: flex;
+
+    height: 100%;
+
+    background: none;
+    border: none;
+    color: $error-red;
+    cursor: pointer;
+
+    &:hover {
+      color: red;
+    }
+
+    &-title {
+      margin-left: 5px;
+    }
+
+    &-icon {
+      fill: $error-red;
+    }
+
+    &:hover &-icon {
+      fill: red;
+    }
   }
 }

@@ -1,26 +1,37 @@
 import React from 'react';
+import { Icon } from '../Icon/Icon';
 import './File.scss';
-import  '../../../public/clip.svg';
-import  '../../../public/trash.svg';
 
-export const File = ({ name }) => (
+export const File = ({ file, onRemove }) => (
   <div className="file">
-      <img
-        className="file__image-clip"
-        src="clip2.svg"
-        alt="clip" 
+    {file.size > 10000
+      ? (
+        <div className="file__error-limit">файл превышает максимальный размер 5МБ</div>
+      )
+      : null
+    }
+    <Icon
+      name="clip"
+      className="file__icon-clip"
+      width={34}
+      height={30}
+    />
+
+    <span className="file__name" >{ file.name }</span>
+
+    <button
+      type="button"
+      className="file__trash"
+      onClick={onRemove}
+    >
+      <Icon
+        name="trash"
+        className="file__trash-icon"
+        width={13}
+        height={16}
       />
-
-      <span className="file__name" >{ name }</span>
-
-      <button>
-        <img
-          className="file__image-trash"
-          src="trash.svg"
-          alt="trash" 
-        />
-        <span>Удалить</span>
-      </button>
+      <span className="file__trash-title">Удалить</span>
+    </button>
   </div>
 );
 

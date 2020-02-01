@@ -3,11 +3,22 @@
 .attach-file {
   max-width: 300px;
 
+  
   &__label {
+    display: flex;
+    align-items: center;;
+
     font-size: 16px;
     color: $blue;
-
     cursor: pointer;
+  }
+  
+  &:hover {
+    opacity: 0.9  ;
+  }
+
+  &__clip-icon {
+    fill: $blue;
   }
 
   &__text {
@@ -19,5 +30,4 @@
     width: 0;
     height: 0;
   }
-
 }

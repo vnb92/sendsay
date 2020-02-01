@@ -29,3 +29,13 @@ export const inputMessage = (payload) => ({
   type: C.INPUT_MESSAGE,
   payload,
 })
+
+export const addFile = (payload) => ({
+  type: C.ADD_FILE,
+  payload,
+})
+
+export const removeFile = (payload) => ({
+  type: C.REMOVE_FILE,
+  payload,
+})

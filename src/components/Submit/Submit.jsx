@@ -1,14 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from '../Button/Button';
+import { sendMessage } from '../../api/sendMessage';
 
 export const Submit = () => {
-  const form = useSelector(({ form })=> form);
+  const form = useSelector(({ form }) => form);
 
   const handleSubmit = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    console.log(form)
+
+    sendMessage(form)
   }
   return (
     <Button

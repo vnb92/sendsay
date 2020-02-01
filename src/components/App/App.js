@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux'
+import { SvgSprite } from '../SvgSprite/SvgSprite'
 import { Logo } from '../Logo/Logo'
 import { Form } from '../Form/Form'
 import { MessagesList } from '../MessagesList/MessagesList'
@@ -14,6 +15,7 @@ const store = configureStore()
 export const App = () => (
   <Provider store={store}>
     <div className="app">
+      <SvgSprite />
       <main className="app__container">
         <Logo />
         <Form />

@@ -11,6 +11,7 @@ const defaultState = {
   },
   topic: '',
   message: '',
+  files: [],
 }
 
 export const form = (state = defaultState, { type, payload }) => {
@@ -61,6 +62,20 @@ export const form = (state = defaultState, { type, payload }) => {
       return {
         ...state,
         message: payload,
+      }
+
+    case C.ADD_FILE:
+      return {
+        ...state,
+        files: [...state.files, payload],
+      }
+
+    case C.REMOVE_FILE:
+      return {
+        ...state,
+        files: state.files.filter(
+          file => file.name !== payload
+        )
       }
 
     default:
