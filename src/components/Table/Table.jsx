@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Body } from './Body/Body';
 import { Head } from './Head/Head';
@@ -8,9 +9,18 @@ import './Table.scss';
 
 export const Table = ({ className, children, ...others }) => (
   <table className={cx('table', className)} {...others}>
-    {children}  
+    {children}
   </table>
 );
+
+Table.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+Table.defaultProps = {
+  className: '',
+};
 
 Table.Head = Head;
 Table.Body = Body;

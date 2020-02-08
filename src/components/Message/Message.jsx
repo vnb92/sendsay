@@ -4,14 +4,14 @@ import { FormBlock } from '../FormBlock/FormBlock';
 import { inputMessage } from '../../store/actions/form';
 import './Message.scss';
 
-export const Message = (props) => {
+export const Message = () => {
   const dispatch = useDispatch();
   const message = useSelector(({ form }) => form.message);
 
   const handleInput = (e) => {
-    e.stopPropagation()
-    dispatch(inputMessage(e.target.value))
-  }
+    e.stopPropagation();
+    dispatch(inputMessage(e.target.value));
+  };
 
   return (
     <FormBlock label="Сообщение">
@@ -21,5 +21,5 @@ export const Message = (props) => {
         onInput={handleInput}
       />
     </FormBlock>
-  )
+  );
 };

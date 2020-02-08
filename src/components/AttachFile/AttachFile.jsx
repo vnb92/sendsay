@@ -4,16 +4,16 @@ import { Icon } from '../Icon/Icon';
 import './AttachFile.scss';
 import { handleFiles } from '../../helpers/handleFiles';
 
-export const AttachFile = (props) => {
-  const dispatch = useDispatch()
+export const AttachFile = () => {
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     e.stopPropagation();
 
     const files = [...e.target.files];
 
-    handleFiles(dispatch, files)
-  }
+    handleFiles(dispatch, files);
+  };
 
   return (
     <div className="attach-file">
@@ -42,4 +42,4 @@ export const AttachFile = (props) => {
       </label>
     </div>
   );
-}
+};

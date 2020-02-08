@@ -8,15 +8,15 @@ export const Recipient = () => {
   const dispatch = useDispatch();
   const recipient = useSelector(({ form }) => form.recipient);
 
-  const handleInputName = (e) => {
-    e.stopPropagation()
-    dispatch(inputNameRecipient(e.target.value))
-  }
+  const handleInputName = e => {
+    e.stopPropagation();
+    dispatch(inputNameRecipient(e.target.value));
+  };
 
-  const handleInputEmail = (e) => {
-    e.stopPropagation()
-    dispatch(inputEmailRecipient(e.target.value))
-  }
+  const handleInputEmail = e => {
+    e.stopPropagation();
+    dispatch(inputEmailRecipient(e.target.value));
+  };
 
   return (
     <EmailBlock
@@ -27,4 +27,4 @@ export const Recipient = () => {
       onInputEmail={handleInputEmail}
     />
   );
-}
+};

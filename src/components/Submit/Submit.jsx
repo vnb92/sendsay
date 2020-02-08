@@ -4,19 +4,20 @@ import { Button } from '../Button/Button';
 import { sendMessage } from '../../api/sendMessage';
 
 export const Submit = () => {
-  const form = useSelector(({ form }) => form);
+  const form = useSelector(state => state.form);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.stopPropagation();
     e.preventDefault();
 
-    sendMessage(form)
-  }
+    sendMessage(form);
+  };
+
   return (
     <Button
       type="button"
       text="Отправить"
       onClick={handleSubmit}
     />
-  )
+  );
 };

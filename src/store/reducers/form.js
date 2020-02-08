@@ -7,12 +7,12 @@ const defaultState = {
   },
   recipient: {
     name: 'sdads',
-    email: 'dfsfsgs@mail.ru'
+    email: 'dfsfsgs@mail.ru',
   },
   topic: 'dfddddd',
   message: 'fsfsfsfsfs',
   files: [],
-}
+};
 
 export const form = (state = defaultState, { type, payload }) => {
   switch (type) {
@@ -22,8 +22,8 @@ export const form = (state = defaultState, { type, payload }) => {
         sender: {
           ...state.sender,
           name: payload,
-        }
-      }
+        },
+      };
 
     case C.INPUT_EMAIL_FROM:
       return {
@@ -31,8 +31,8 @@ export const form = (state = defaultState, { type, payload }) => {
         sender: {
           ...state.sender,
           email: payload,
-        }
-      }
+        },
+      };
 
     case C.INPUT_NAME_TO:
       return {
@@ -40,8 +40,8 @@ export const form = (state = defaultState, { type, payload }) => {
         recipient: {
           ...state.recipient,
           name: payload,
-        }
-      }
+        },
+      };
 
     case C.INPUT_EMAIL_TO:
       return {
@@ -49,36 +49,36 @@ export const form = (state = defaultState, { type, payload }) => {
         recipient: {
           ...state.recipient,
           email: payload,
-        }
-      }
+        },
+      };
 
     case C.INPUT_TOPIC:
       return {
         ...state,
         topic: payload,
-      }
+      };
 
     case C.INPUT_MESSAGE:
       return {
         ...state,
         message: payload,
-      }
+      };
 
     case C.ADD_FILE:
       return {
         ...state,
         files: [...state.files, payload],
-      }
+      };
 
     case C.REMOVE_FILE:
       return {
         ...state,
         files: state.files.filter(
-          file => file.name !== payload
-        )
-      }
+          file => file.name !== payload,
+        ),
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};

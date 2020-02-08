@@ -3,6 +3,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { reducer } from './reducers';
 
 export const configureStore = () => {
-  const store = createStore(reducer, composeWithDevTools(applyMiddleware()))
-  return store
-}
+  const store = createStore(reducer, composeWithDevTools(applyMiddleware()));
+  return store;
+};

@@ -5,7 +5,7 @@ import './Files.scss';
 import { removeFile } from '../../store/actions/form';
 
 export const Files = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const files = useSelector(state => state.form.files);
   const handleRemoveFile = (fileName) => () => dispatch(removeFile(fileName));
 
@@ -19,6 +19,5 @@ export const Files = () => {
         />
       ))}
     </div>
-  )
+  );
 };
-

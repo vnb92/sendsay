@@ -8,15 +8,15 @@ export const Sender = () => {
   const dispatch = useDispatch();
   const sender = useSelector(({ form }) => form.sender);
 
-  const handleInputName = (e) => {
-    e.stopPropagation()
-    dispatch(inputNameSender(e.target.value))
-  }
+  const handleInputName = e => {
+    e.stopPropagation();
+    dispatch(inputNameSender(e.target.value));
+  };
 
-  const handleInputEmail = (e) => {
-    e.stopPropagation()
-    dispatch(inputEmailSender(e.target.value))
-  }
+  const handleInputEmail = e => {
+    e.stopPropagation();
+    dispatch(inputEmailSender(e.target.value));
+  };
 
   return (
     <EmailBlock

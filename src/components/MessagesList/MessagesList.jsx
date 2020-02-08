@@ -1,19 +1,21 @@
 import React from 'react';
+// import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Table } from '../Table/Table';
-import './MessagesList.scss'
-import { useSelector } from 'react-redux';
+import './MessagesList.scss';
 
 export const MessagesList = () => {
-  const messages = useSelector(state => state.messages)
+  const { t } = useTranslation();
+  // const messages = useSelector(state => state.messages);
   return (
     <div className="messages-list">
-      <h2 className="messages-list__title">Отправленные сообщения</h2>
+      <h2 className="messages-list__title">{t('sentMessages')}</h2>
       <Table>
         <Table.Head>
           <Table.Row>
-            <Table.Cell className="table__date">Дата</Table.Cell>
-            <Table.Cell className="table__topic">Тема</Table.Cell>
-            <Table.Cell className="table__status">Статус</Table.Cell>
+            <Table.Cell className="table__date">{t('date')}</Table.Cell>
+            <Table.Cell className="table__topic">{t('topic')}</Table.Cell>
+            <Table.Cell className="table__status">{t('status')}</Table.Cell>
           </Table.Row>
         </Table.Head>
 

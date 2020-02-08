@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import './Input.scss';
 
@@ -9,6 +10,12 @@ export const Input = memo(({ className, error, ...other }) => (
   </div>
 ));
 
+Input.propTypes = {
+  className: PropTypes.string,
+  error: PropTypes.string,
+};
+
 Input.defaultProps = {
-  error: ''
-}
+  className: '',
+  error: '',
+};

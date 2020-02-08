@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormBlock } from '../FormBlock/FormBlock';
 import { Input } from '../Input/Input';
 import './EmailBlock.scss';
@@ -8,7 +9,7 @@ export const EmailBlock = ({
   name,
   email,
   onInputName,
-  onInputEmail
+  onInputEmail,
 }) => (
   <FormBlock label={label}>
     <div className="email-block">
@@ -28,5 +29,20 @@ export const EmailBlock = ({
       />
     </div>
   </FormBlock>
-)
+);
 
+EmailBlock.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  email: PropTypes.string,
+  onInputName: PropTypes.string,
+  onInputEmail: PropTypes.string,
+};
+
+EmailBlock.defaultProps = {
+  label: '',
+  name: '',
+  email: '',
+  onInputName: '',
+  onInputEmail: '',
+};

@@ -10,10 +10,10 @@ export const Topic = () => {
   const topic = useSelector(({ form }) => form.topic);
 
   const handleInput = (e) => {
-    e.stopPropagation()
-    dispatch(inputTopic(e.target.value))
-  }
-  
+    e.stopPropagation();
+    dispatch(inputTopic(e.target.value));
+  };
+
   return (
     <FormBlock label="Тема письма">
       <Input
@@ -23,5 +23,5 @@ export const Topic = () => {
         onInput={handleInput}
       />
     </FormBlock>
-  )
+  );
 };

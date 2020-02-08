@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Icon.scss';
 
 export const Icon = ({ name, ...others }) => (
@@ -15,6 +16,6 @@ export const Icon = ({ name, ...others }) => (
   </svg>
 );
 
-Icon.defaultProps = {
-  name: ''
-}
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
+};

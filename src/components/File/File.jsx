@@ -1,40 +1,63 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import { Icon } from '../Icon/Icon';
 import './File.scss';
 
-export const File = ({ file, onRemove }) => (
-  <div className="file">
-    {file.size > 10000
-      ? (
-        <div className="file__error-limit">файл превышает макс. размер 5МБ</div>
-      )
-      : null
-    }
-    <Icon
-      name="clip"
-      className="file__icon-clip"
-      width={34}
-      height={30}
-    />
+const CLIP_ICON_WIDTH_PX = 34;
+const CLIP_ICON_HEIGHT_PX = 30;
 
-    <span className="file__name" >{ file.name }</span>
+const TRASH_ICON_WIDTH_PX = 13;
+const TRASH_ICON_HEIGHT_PX = 16;
 
-    <button
-      type="button"
-      className="file__trash"
-      onClick={onRemove}
-    >
+const MAX_FILE_SIZE_BYTES = 10000;
+
+export const File = ({ file, onRemove }) => {
+  const { t } = useTranslation();
+  const isNormalFileSize = file.size < MAX_FILE_SIZE_BYTES;
+  return (
+    <div className="file">
+      {!isNormalFileSize
+        ? (
+          <div className="file__error-limit">
+            {t('fileExceedMaxSize')}
+          </div>
+        )
+        : null}
       <Icon
-        name="trash"
-        className="file__trash-icon"
-        width={13}
-        height={16}
+        name="clip"
+        className="file__icon-clip"
+        width={CLIP_ICON_WIDTH_PX}
+        height={CLIP_ICON_HEIGHT_PX}
       />
-      <span className="file__trash-title">Удалить</span>
-    </button>
-  </div>
-);
+
+      <span className="file__name">{ file.name }</span>
+
+      <button
+        type="button"
+        className="file__trash"
+        onClick={onRemove}
+      >
+        <Icon
+          name="trash"
+          className="file__trash-icon"
+          width={TRASH_ICON_WIDTH_PX}
+          height={TRASH_ICON_HEIGHT_PX}
+        />
+        <span className="file__trash-title">{t('remove')}</span>
+      </button>
+    </div>
+  );
+};
+
+File.propTypes = {
+  file: PropTypes.shape({
+    size: PropTypes.number,
+    name: PropTypes.string,
+  }).isRequired,
+  onRemove: PropTypes.func,
+};
 
 File.defaultProps = {
-  name: 'Имя файла'
-}
+  onRemove: () => {},
+};
