@@ -1,19 +1,19 @@
 import Sendsay from 'sendsay-api';
 import { config } from '../appConfig';
 
-export let api;
-
 export const initApi = () => {
-  api =  new Sendsay({ apiKey: config.API_KEY });
+  const api = new Sendsay({ apiKey: config.API_KEY });
 
-  const testRequest = { 
+  const testRequest = {
     action: 'sys.settings.get',
-    list: ['about.id']
-  }
+    list: ['about.id'],
+  };
 
   api
     .request(testRequest)
     .then(res => console.log(res));
 
-  return api
+  return api;
 };
+
+export const api = initApi();

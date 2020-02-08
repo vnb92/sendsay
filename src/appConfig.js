@@ -5,4 +5,4 @@ export const config = {
   SUBLOGIN: 'bogatyrev92',
   MB_MULTIPLIER: 1000000,
   MAX_FILE_SIZE_MB: 5,
-}
+};

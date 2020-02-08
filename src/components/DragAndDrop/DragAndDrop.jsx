@@ -7,34 +7,34 @@ import { handleFiles } from '../../helpers/handleFiles';
 import './DragAndDrop.scss';
 
 export const DragAndDrop = () => {
-  const dispatch = useDispatch()
-  const store = useStore()
-  const isDragAndDrop = useSelector(state => state.isDragAndDrop)
+  const dispatch = useDispatch();
+  const store = useStore();
+  const isDragAndDrop = useSelector(state => state.isDragAndDrop);
 
   useEffect(() => {
-    addDragAndDropEventListenersForOtherNodes(store)
-  }, [])
+    addDragAndDropEventListenersForOtherNodes(store);
+  }, []);
 
   const handleDrop = (e) => {
     e.preventDefault();
     e.stopPropagation();
 
     const files = [...e.dataTransfer.files];
-    handleFiles(dispatch, files)
-  
-    dispatch(unsetDragAndDrop())   
-  }
-  
+    handleFiles(dispatch, files);
+
+    dispatch(unsetDragAndDrop());
+  };
+
   const disableEvent = (e) => {
     e.preventDefault();
     e.stopPropagation();
-  }
+  };
 
   return (
     <div
       className={cx(
         'drag-and-drop',
-        isDragAndDrop && 'drag-and-drop--show'
+        isDragAndDrop && 'drag-and-drop--show',
       )}
       onDragEnter={disableEvent}
       onDragLeave={disableEvent}
@@ -46,5 +46,5 @@ export const DragAndDrop = () => {
         <span className="drag-and-drop__description">Мы принимаем картинки (jpg, png, gif), офисные файлы (doc, xls, pdf) и zip-архивы. Размеры файла до 5 МБ</span>
       </p>
     </div>
-  )
-}
+  );
+};

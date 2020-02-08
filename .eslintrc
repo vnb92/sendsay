@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "plugins": ["babel", "import", "jsx-a11y", "react"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "import/prefer-default-export": "off",
+    "arrow-parens": "off",
+    "no-console": "off"
+  }
+}
