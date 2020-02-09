@@ -21,6 +21,8 @@ export const sendMessage = async ({
     mca: [recipient.email],
   };
 
+  console.log(options);
+
   const response = await api.request(options);
 
   return response['track.id'];

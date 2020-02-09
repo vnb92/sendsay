@@ -1,19 +1,23 @@
 @import '../../styles/vars.scss';
 
 .files {
-  position: relative;
-
-  display: flex;
-  flex-wrap: wrap;
-
   margin-bottom: 13px;
 
+  &__container {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &__error {
-    position: absolute;
-    bottom: -9px;
+    display: block;
+
+    position: relative;
+    bottom: -5px;
     left: 6px;
 
-    color: $error-red;
+    color: $red;
     font-size: 14px;
   }
 }

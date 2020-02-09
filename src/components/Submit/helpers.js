@@ -37,12 +37,12 @@ export const getHasError = errorsObject => {
     objectNodes.forEach(node => {
       if (typeof node === 'object') {
         checkErrors(node);
-      }
-
-      // выход из рекурсии
-      const hasSomeError = Boolean(node);
-      if (hasSomeError) {
-        hasError = true;
+      } else {
+        // выход из рекурсии
+        const hasSomeError = Boolean(node);
+        if (hasSomeError) {
+          hasError = true;
+        }
       }
     });
   };

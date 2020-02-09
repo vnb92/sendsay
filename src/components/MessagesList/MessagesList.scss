@@ -22,15 +22,15 @@
       text-align: end;
 
       &-succsess {
-        color: $complete-green;
+        color: $green;
       }
     
       &-pending {
-        color: $pending-gray;
+        color: $gray-dark;
       }
     
       &-error {
-        color: $error-red;
+        color: $red;
       }
     }
   }

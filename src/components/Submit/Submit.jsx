@@ -17,8 +17,8 @@ export const Submit = () => {
   const handleSubmit = async (e) => {
     e.stopPropagation();
     e.preventDefault();
-
     const errors = validateForm(form);
+    // debugger
     const hasError = getHasError(errors);
     if (hasError) {
       dispatch(setFormErrors(errors));

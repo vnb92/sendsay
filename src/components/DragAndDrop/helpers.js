@@ -9,7 +9,7 @@ export const addDragAndDropEventListenersForOtherNodes = store => {
     dispatch(setDragAndDrop());
   };
 
-  const disableDropMode = (e) => {
+  const disableDropMode = e => {
     if (e.target !== e.currentTarget) return;
     dispatch(unsetDragAndDrop());
   };
@@ -17,4 +17,12 @@ export const addDragAndDropEventListenersForOtherNodes = store => {
   const appNode = document.querySelector('.app');
   appNode.addEventListener('dragenter', enableDropMode);
   appNode.addEventListener('dragleave', disableDropMode);
+
+  const formHandler = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const formNode = document.querySelector('.form');
+  formNode.addEventListener('dragleave', formHandler);
 };

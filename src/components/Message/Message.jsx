@@ -23,6 +23,8 @@ export const Message = () => {
     dispatch(unsetFormErrors());
   };
 
+  const mockHandleChange = () => {};
+
   return (
     <FormBlock label={t('message')}>
       <textarea
@@ -30,6 +32,7 @@ export const Message = () => {
         value={message}
         onInput={handleInput}
         onFocus={handleFocus}
+        onChange={mockHandleChange}
       />
       {hasError && <span className="message__error">{error}</span>}
     </FormBlock>

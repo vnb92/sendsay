@@ -11,7 +11,7 @@ const defaultErrors = {
   },
   topic: '',
   message: '',
-  files: 'dsf',
+  files: '',
 };
 
 const defaultState = {

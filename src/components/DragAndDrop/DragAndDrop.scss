@@ -1,25 +1,37 @@
+@import '../../styles/vars.scss';
+
 .drag-and-drop {
   display: none;
   
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  $position: 0px;
 
-  justify-content: center;
-  align-items: center;
+  left: $position;
+  top: $position;
+  right: $position;
+  bottom: $position;
 
-  padding: 30px;
+  padding: 11px;
   
-  border: 1px dashed #CCCCCC;
   background-color: rgba(255, 255, 255, 0.9);
   
   text-align: center;
-  z-index: 10;
+  z-index: 100;
 
   &--show {
     display: flex;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    align-self: stretch;
+
+    padding: 20px;
+
+    border: 1px dashed $gray-80;
   }
 
   &__title {

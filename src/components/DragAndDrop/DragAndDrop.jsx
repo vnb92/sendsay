@@ -5,6 +5,7 @@ import cx from 'classnames';
 import { unsetDragAndDrop } from '../../store/actions/isDragAndDrop';
 import { addDragAndDropEventListenersForOtherNodes } from './helpers';
 import { handleFiles } from '../../helpers/handleFiles';
+import { ENV } from '../../config';
 import './DragAndDrop.scss';
 
 export const DragAndDrop = () => {
@@ -17,7 +18,7 @@ export const DragAndDrop = () => {
     addDragAndDropEventListenersForOtherNodes(store);
   }, []);
 
-  const handleDrop = (e) => {
+  const handleDrop = e => {
     e.preventDefault();
     e.stopPropagation();
 
@@ -27,7 +28,7 @@ export const DragAndDrop = () => {
     dispatch(unsetDragAndDrop());
   };
 
-  const disableEvent = (e) => {
+  const disableEvent = e => {
     e.preventDefault();
     e.stopPropagation();
   };
@@ -43,10 +44,14 @@ export const DragAndDrop = () => {
       onDragOver={disableEvent}
       onDrop={handleDrop}
     >
-      <p className="drag-and-drop__wrapper">
-        <span className="drag-and-drop__title">{t('dropFiles')}</span>
-        <span className="drag-and-drop__description">{t('fileFormatsMessage')}</span>
-      </p>
+      <div className="drag-and-drop__wrapper">
+        <p className="drag-and-drop__instruction">
+          <span className="drag-and-drop__title">{t('dropFiles')}</span>
+          <span className="drag-and-drop__description">
+            {t('fileFormatsMessage', { size: ENV.MAX_FILE_SIZE_MB })}
+          </span>
+        </p>
+      </div>
     </div>
   );
 };

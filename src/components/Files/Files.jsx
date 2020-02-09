@@ -18,13 +18,15 @@ export const Files = () => {
 
   return (
     <div className="files">
-      {files.map(file => (
-        <File
-          key={file.name + file.size}
-          file={file}
-          onRemove={handleRemoveFile(file.name)}
-        />
-      ))}
+      <div className="files__container">
+        {files.map(file => (
+          <File
+            key={file.name + file.size}
+            file={file}
+            onRemove={handleRemoveFile(file.name)}
+          />
+        ))}
+      </div>
       {showError && <span className="files__error">{error}</span>}
     </div>
   );
