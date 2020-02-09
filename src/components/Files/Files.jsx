@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { File } from '../File/File';
 import './Files.scss';
-import { removeFile } from '../../store/actions/form';
+import { removeFile, unsetFormErrors } from '../../store/actions/form';
 
 export const Files = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,10 @@ export const Files = () => {
 
   const showError = Boolean(error) && Boolean(files.length);
 
-  const handleRemoveFile = (fileName) => () => dispatch(removeFile(fileName));
+  const handleRemoveFile = (fileName) => () => {
+    dispatch(removeFile(fileName));
+    dispatch(unsetFormErrors());
+  };
 
   return (
     <div className="files">

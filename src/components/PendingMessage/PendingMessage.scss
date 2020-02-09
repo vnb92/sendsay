@@ -1,3 +1,5 @@
+@import '../../styles/vars.scss';
+
 .pending-message {
   position: absolute;
   left: 0;
@@ -14,15 +16,28 @@
   background-color: white;
   z-index: 10;
 
+  @include media-breakpoint(sm) {
+    padding: 20px;
+  }
+
   &__title {
     margin-bottom: 15px;
-    font-size: 23px;
+
+    font-size: 30px;
     text-align: center;
+
+    @include media-breakpoint(sm) {
+      font-size: 22px;
+    }
   }
 
   &__description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 25px;
     text-align: center;
+
+    @include media-breakpoint(sm) {
+      font-size: 14px;
+    }
   }
 }

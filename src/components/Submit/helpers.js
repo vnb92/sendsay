@@ -69,7 +69,7 @@ function message(field) {
 }
 
 function files(attachFiles) {
-  let error;
+  let error = '';
 
   const defaultTotalSize = 0;
   const totalSize = attachFiles.reduce((acc, file) => {

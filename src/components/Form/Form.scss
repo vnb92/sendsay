@@ -19,6 +19,7 @@
 
   &__title {
     margin-bottom: 10px;
+    font-size: 30px;
 
     @include media-breakpoint(sm) {
       font-size: 19px;

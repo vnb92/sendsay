@@ -1,8 +1,7 @@
 export const ru = {
   messageSending: 'Отправлялка сообщений',
   dropFiles: 'Бросайте файлы сюда, я ловлю',
-  fileFormatsMessage: 'Мы принимаем картинки (jpg, png, gif), офисные файлы (doc, xls, pdf) и zip-архивы. Размеры файла до 5 МБ',
-  fileExceedMaxSize: 'файл превышает макс. размер 5МБ',
+  fileFormatsMessage: 'Мы принимаем картинки (jpg, png, gif), офисные файлы (doc, xls, pdf) и zip-архивы. Размеры файла до {{size}} МБ',
   remove: 'удалить',
   sentMessages: 'Отправленные сообщения',
   date: 'Дата',
@@ -22,4 +21,12 @@ export const ru = {
   invalidEmail: 'Email введен неверно',
   maxFileSizeError: 'Можно прикрепить файл не более {{size}}МБ',
   maxTotalFilesSizeError: 'Общий размер файлов не может превышать {{size}}МБ',
+  attachFile: 'Прикрепить файл',
+  name: 'Имя',
+  email: 'Email',
+  message: 'Сообщение',
+  to: 'Кому',
+  from: 'От кого',
+  submit: 'Отправить',
+  enterTopic: 'Введите тему письма',
 };

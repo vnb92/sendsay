@@ -9,11 +9,8 @@
   padding: 20px 4px;
 
   &__container { 
-    max-width: 630px;
     min-width: 310px;
-
-    @include media-breakpoint(sm) {
-      width: 90%;
-    }
+    width: 90%;
+    max-width: 800px;
   }
 }

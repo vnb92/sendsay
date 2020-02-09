@@ -4,8 +4,8 @@ export const handleFiles = (dispatch, files) => {
   files.forEach(file => {
     const reader = new FileReader();
     reader.readAsArrayBuffer(file);
-    reader.onload = (e) => handleOnLoad(e, file);
-    reader.onerror = (e) => console.log('error', e.target.error);
+    reader.onload = e => handleOnLoad(e, file);
+    reader.onerror = e => console.log('error', e.target.error);
   });
 
   function handleOnLoad(e, file) {

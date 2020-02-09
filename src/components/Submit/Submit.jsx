@@ -50,7 +50,7 @@ export const Submit = () => {
   return (
     <Button
       type="button"
-      text="Отправить"
+      text={t('submit')}
       onClick={handleSubmit}
     />
   );

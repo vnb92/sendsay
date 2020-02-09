@@ -10,20 +10,11 @@ const CLIP_ICON_HEIGHT_PX = 30;
 const TRASH_ICON_WIDTH_PX = 13;
 const TRASH_ICON_HEIGHT_PX = 16;
 
-const MAX_FILE_SIZE_BYTES = 10000;
-
 export const File = ({ file, onRemove }) => {
   const { t } = useTranslation();
-  const isNormalFileSize = file.size < MAX_FILE_SIZE_BYTES;
+
   return (
     <div className="file">
-      {!isNormalFileSize
-        ? (
-          <div className="file__error-limit">
-            {t('fileExceedMaxSize')}
-          </div>
-        )
-        : null}
       <Icon
         name="clip"
         className="file__icon-clip"

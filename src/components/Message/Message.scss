@@ -8,8 +8,8 @@
   resize: vertical;
 
   &__error {
-    position: absolute;
-    bottom: -9px;
+    position: relative;
+    bottom: -5px;
     left: 6px;
 
     color: $error-red;

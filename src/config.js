@@ -4,4 +4,5 @@ export const ENV = {
   MAX_FILE_SIZE_MB: 5,
   MAX_TOTAL_FILE_SIZE_MB: 20,
   UPDATE_TRACK_STATUS_INTERVAL_MS: 5000,
+  ALLOWED_FILE_EXTENSIONS: ['jpg', 'png', 'gif', 'doc', 'xls', 'pdf', ' zip'],
 };

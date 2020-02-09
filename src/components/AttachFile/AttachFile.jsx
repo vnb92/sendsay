@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Icon } from '../Icon/Icon';
 import './AttachFile.scss';
 import { handleFiles } from '../../helpers/handleFiles';
 
 export const AttachFile = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -28,7 +30,7 @@ export const AttachFile = () => {
           height={15}
         />
 
-        <span className="attach-file__text">Прикрепить файл</span>
+        <span className="attach-file__text">{t('attachFile')}</span>
 
         <input
           onChange={handleChange}

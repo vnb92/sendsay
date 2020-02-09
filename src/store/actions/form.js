@@ -53,3 +53,8 @@ export const setFormErrors = (payload) => ({
   type: C.SET_FORM_ERRORS,
   payload,
 });
+
+export const unsetFormErrors = (payload) => ({
+  type: C.UNSET_FORM_ERRORS,
+  payload,
+});

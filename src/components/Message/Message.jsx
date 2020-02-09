@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { FormBlock } from '../FormBlock/FormBlock';
-import { inputMessage } from '../../store/actions/form';
+import { inputMessage, unsetFormErrors } from '../../store/actions/form';
 import './Message.scss';
 
 export const Message = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const message = useSelector(({ form }) => form.message);
   const error = useSelector((state) => state.form.errors.message);
@@ -16,12 +18,18 @@ export const Message = () => {
     dispatch(inputMessage(e.target.value));
   };
 
+  const handleFocus = (e) => {
+    e.stopPropagation();
+    dispatch(unsetFormErrors());
+  };
+
   return (
-    <FormBlock label="Сообщение">
+    <FormBlock label={t('message')}>
       <textarea
         className="message"
         value={message}
         onInput={handleInput}
+        onFocus={handleFocus}
       />
       {hasError && <span className="message__error">{error}</span>}
     </FormBlock>
