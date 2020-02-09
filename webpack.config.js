@@ -9,7 +9,10 @@ module.exports = {
   mode: DEV ? 'development' : 'production',
 
   entry: {
-    app: path.resolve(__dirname, './src/index.jsx'),
+    app: [
+      '@babel/polyfill',
+      path.resolve(__dirname, './src/index.jsx'),
+    ],
   },
 
   output: {

@@ -9,6 +9,8 @@
   
   &__field {
     flex-grow: 1;
+
+    width: 50%;
     height: 40px;
     padding: 5px;
 
@@ -23,20 +25,31 @@
     }
   }
 
+  &-dual:first-child &__field {
+    border-radius: $input-border-radius 0 0 $input-border-radius;
+    border-right-width: 0;
+
+    @include media-breakpoint(sm) {
+      border-radius: $input-border-radius $input-border-radius 0 0;
+      border-right-width: 1px;
+      border-bottom-width: 0;
+    }
+  }
+
+  &-dual:last-child &__field {
+    border-radius: 0 $input-border-radius $input-border-radius 0;
+
+    @include media-breakpoint(sm) {
+      border-radius: 0 0 $input-border-radius $input-border-radius;
+    }
+  }
+
   &__error {
     position: absolute;
     bottom: -18px;
-    left: 5px;
+    left: 6px;
 
     color: $error-red;
-  }
-
-  &-dual-left {
-    border-radius: $input-border-radius 0 0 $input-border-radius;
-    border-right-width: 0;
-  }
-
-  &-dual-right {
-    border-radius: 0 $input-border-radius $input-border-radius 0;
+    font-size: 14px;
   }
 }

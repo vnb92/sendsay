@@ -15,6 +15,18 @@ i18n
   .init({
     resources,
     lng: 'ru',
+    interpolation: {
+      format: (value, format, lng) => {
+        if (format === 'intlDate') {
+          return new Intl.DateTimeFormat(lng, {
+            day: 'numeric',
+            month: 'long',
+          }).format(value);
+        }
+
+        return value;
+      },
+    },
   });
 
 export default i18n;

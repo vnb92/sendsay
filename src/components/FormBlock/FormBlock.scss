@@ -1,6 +1,8 @@
 @import '../../styles/vars.scss';
 
 .form-block {
+  position: relative;
+
   display: flex;
   flex-direction: column;
 
@@ -10,5 +12,9 @@
     margin-bottom: 5px;
     font-size: 16px;
     color: $label-color;
+
+    @include media-breakpoint(sm) {
+      font-size: 15px;
+    }
   }
 }

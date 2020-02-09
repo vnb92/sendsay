@@ -11,7 +11,10 @@ export const Head = ({ className, children, ...others }) => (
 
 Head.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
 };
 
 Head.defaultProps = {

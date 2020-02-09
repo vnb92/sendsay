@@ -1,10 +1,14 @@
 @import '../../styles/vars.scss';
 
 .button {
+  $blue-gradient: linear-gradient(180deg, $light-blue, $blue);
+  $hover-gradient-color: rgba(255, 255, 255, 0.15);
+  $active-gradient-color: rgba(0, 0, 0, 0.15);
+
   height: 40px;
   width: 140px;
 
-  background: linear-gradient(180deg, $light-blue 0%, $blue 100%);
+  background: $blue-gradient;
   border: none;
   border-radius: $input-border-radius;
 
@@ -13,14 +17,19 @@
   cursor: pointer;
 
   &:hover {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(180deg, #45A6FF 0%, #0055FB 100%)
+    background:
+      linear-gradient(0deg, $hover-gradient-color, $hover-gradient-color),
+      $blue-gradient;
   }
 
   &:active {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(180deg, #45A6FF 0%, #0055FB 100%);
+    background:
+      linear-gradient(0deg, $active-gradient-color, $active-gradient-color),
+      $blue-gradient;
   }
 
   &:disabled {
-    background: linear-gradient(0deg, #C4C4C4, #C4C4C4), linear-gradient(180deg, #45A6FF 0%, #0055FB 100%)
+    background: none;
+    background-color: #C4C4C4;
   }
 }

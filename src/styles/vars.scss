@@ -1,3 +1,5 @@
+@import './media.scss';
+
 /* colors */
 $white: #FFF;
 $gray-light: #F7F7F7;
@@ -6,7 +8,7 @@ $blue: #0055FB;
 $light-blue: #45A6FF;
 $error-red: #FF6666;
 $complete-green: #03A100;
-$pandding-gray: $gray-dark;
+$pending-gray: $gray-dark;
 $input-border-color: #DDDDDD;
 $input-active-border-color: #45A5FF;
 

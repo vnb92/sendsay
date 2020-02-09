@@ -2,12 +2,18 @@
 
 .logo {
   $margin-right: 10px;
+  $margin-right-mobile: 7px;
   $container-height: 60px;
+  $container-height-mobile: 40px;
 
   display: flex;
 
   height: $container-height;
   margin-bottom: 20px;
+
+  @include media-breakpoint(sm) {
+    height: $container-height-mobile;
+  }
 
   &__circle {
     width: $container-height;
@@ -16,6 +22,11 @@
 
     background-color: $gray-dark;
     border-radius: 50%;
+
+    @include media-breakpoint(sm) {
+      width: $container-height-mobile;
+      margin-right: $margin-right-mobile;
+    }
   }
 
   &__rect {
@@ -24,6 +35,11 @@
     margin-right: $margin-right;
 
     background-color: $gray-dark;
+
+    @include media-breakpoint(sm) {
+      width: $container-height-mobile/2;
+      margin-right: $margin-right-mobile;
+    }
   }
 
   &__rect-skew {

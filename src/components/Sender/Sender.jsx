@@ -6,7 +6,8 @@ import './Sender.scss';
 
 export const Sender = () => {
   const dispatch = useDispatch();
-  const sender = useSelector(({ form }) => form.sender);
+  const sender = useSelector(state => state.form.sender);
+  const errors = useSelector(state => state.form.errors.sender);
 
   const handleInputName = e => {
     e.stopPropagation();
@@ -25,6 +26,7 @@ export const Sender = () => {
       onInputName={handleInputName}
       email={sender.email}
       onInputEmail={handleInputEmail}
+      errors={errors}
     />
   );
 };

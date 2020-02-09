@@ -1,6 +1,19 @@
+@import '../../styles/vars.scss';
+
 .files {
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
 
   margin-bottom: 13px;
+
+  &__error {
+    position: absolute;
+    bottom: -9px;
+    left: 6px;
+
+    color: $error-red;
+    font-size: 14px;
+  }
 }

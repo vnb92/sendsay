@@ -7,6 +7,7 @@ import './Recipient.scss';
 export const Recipient = () => {
   const dispatch = useDispatch();
   const recipient = useSelector(({ form }) => form.recipient);
+  const errors = useSelector(state => state.form.errors.recipient);
 
   const handleInputName = e => {
     e.stopPropagation();
@@ -25,6 +26,7 @@ export const Recipient = () => {
       onInputName={handleInputName}
       email={recipient.email}
       onInputEmail={handleInputEmail}
+      errors={errors}
     />
   );
 };

@@ -1,5 +1,14 @@
 import * as C from '../constants';
 
+export const resetForm = () => ({
+  type: C.RESET_FORM,
+});
+
+export const setIsPending = (payload) => ({
+  type: C.SET_IS_PENDING,
+  payload,
+});
+
 export const inputNameSender = (payload) => ({
   type: C.INPUT_NAME_FROM,
   payload,
@@ -37,5 +46,10 @@ export const addFile = (payload) => ({
 
 export const removeFile = (payload) => ({
   type: C.REMOVE_FILE,
+  payload,
+});
+
+export const setFormErrors = (payload) => ({
+  type: C.SET_FORM_ERRORS,
   payload,
 });

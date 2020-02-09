@@ -1,12 +1,19 @@
+@import '../../styles/vars.scss';
+
 .app {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-  padding: 20px 80px;
+  padding: 20px 4px;
 
   &__container { 
-    width: 630px;
+    max-width: 630px;
+    min-width: 310px;
+
+    @include media-breakpoint(sm) {
+      width: 90%;
+    }
   }
 }

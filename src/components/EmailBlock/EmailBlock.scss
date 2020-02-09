@@ -1,3 +1,9 @@
+@import '../../styles/vars.scss';
+
 .email-block {
   display: flex;
+
+  @include media-breakpoint(sm) {
+    flex-direction: column;
+  }
 }

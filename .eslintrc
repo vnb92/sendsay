@@ -13,6 +13,9 @@
     "arrow-parens": "off",
     "no-console": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "object-curly-newline": ["error", {
+      "ObjectPattern": { "multiline": true }
+    }]
   }
 }

@@ -1,7 +1,11 @@
 import { api } from './api';
 
-export const sendMessage = ({
-  topic, sender, recipient, message, files,
+export const sendMessage = async ({
+  topic,
+  sender,
+  recipient,
+  message,
+  files,
 }) => {
   const options = {
     action: 'issue.send.test',
@@ -17,6 +21,7 @@ export const sendMessage = ({
     mca: [recipient.email],
   };
 
-  api.request(options)
-    .then(res => { console.log(res); });
+  const response = await api.request(options);
+
+  return response['track.id'];
 };

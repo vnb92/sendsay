@@ -7,6 +7,9 @@ import './Message.scss';
 export const Message = () => {
   const dispatch = useDispatch();
   const message = useSelector(({ form }) => form.message);
+  const error = useSelector((state) => state.form.errors.message);
+
+  const hasError = Boolean(error);
 
   const handleInput = (e) => {
     e.stopPropagation();
@@ -20,6 +23,7 @@ export const Message = () => {
         value={message}
         onInput={handleInput}
       />
+      {hasError && <span className="message__error">{error}</span>}
     </FormBlock>
   );
 };

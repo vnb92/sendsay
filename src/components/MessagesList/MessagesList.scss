@@ -21,12 +21,12 @@
     &__status {
       text-align: end;
 
-      &-complete {
+      &-succsess {
         color: $complete-green;
       }
     
-      &-pandding {
-        color: $pandding-gray;
+      &-pending {
+        color: $pending-gray;
       }
     
       &-error {

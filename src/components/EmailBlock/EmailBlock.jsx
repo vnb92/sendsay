@@ -10,22 +10,25 @@ export const EmailBlock = ({
   email,
   onInputName,
   onInputEmail,
+  errors,
 }) => (
   <FormBlock label={label}>
     <div className="email-block">
       <Input
         type="text"
         placeholder="Имя"
-        className="input-dual-left"
         value={name}
         onInput={onInputName}
+        error={errors.name}
+        isDual
       />
       <Input
         type="email"
         placeholder="Email"
-        className="input-dual-right"
         value={email}
         onInput={onInputEmail}
+        error={errors.email}
+        isDual
       />
     </div>
   </FormBlock>
@@ -35,14 +38,18 @@ EmailBlock.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
   email: PropTypes.string,
-  onInputName: PropTypes.string,
-  onInputEmail: PropTypes.string,
+  onInputName: PropTypes.func,
+  onInputEmail: PropTypes.func,
+  errors: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+  }).isRequired,
 };
 
 EmailBlock.defaultProps = {
   label: '',
   name: '',
   email: '',
-  onInputName: '',
-  onInputEmail: '',
+  onInputName: () => {},
+  onInputEmail: () => {},
 };

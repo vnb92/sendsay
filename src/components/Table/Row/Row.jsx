@@ -11,7 +11,10 @@ export const Row = ({ className, children, ...others }) => (
 
 Row.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
 };
 
 Row.defaultProps = {

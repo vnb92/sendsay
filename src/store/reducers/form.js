@@ -1,21 +1,48 @@
 import * as C from '../constants';
 
-const defaultState = {
+const defaultErrors = {
   sender: {
-    name: 'dfgd',
-    email: 'fsfs@mail.ru',
+    name: '',
+    email: '',
   },
   recipient: {
-    name: 'sdads',
-    email: 'dfsfsgs@mail.ru',
+    name: '',
+    email: '',
   },
-  topic: 'dfddddd',
-  message: 'fsfsfsfsfs',
+  topic: '',
+  message: '',
+  files: '',
+};
+
+const defaultState = {
+  isPending: false,
+  sender: {
+    name: '',
+    email: '',
+  },
+  recipient: {
+    name: '',
+    email: '',
+  },
+  topic: '',
+  message: '',
   files: [],
+  errors: {
+    ...defaultErrors,
+  },
 };
 
 export const form = (state = defaultState, { type, payload }) => {
   switch (type) {
+    case C.RESET_FORM:
+      return defaultState;
+
+    case C.SET_IS_PENDING:
+      return {
+        ...state,
+        isPending: payload,
+      };
+
     case C.INPUT_NAME_FROM:
       return {
         ...state,
@@ -76,6 +103,18 @@ export const form = (state = defaultState, { type, payload }) => {
         files: state.files.filter(
           file => file.name !== payload,
         ),
+      };
+
+    case C.SET_FORM_ERRORS:
+      return {
+        ...state,
+        errors: payload,
+      };
+
+    case C.UNSET_FORM_ERRORS:
+      return {
+        ...state,
+        errors: defaultErrors,
       };
 
     default:

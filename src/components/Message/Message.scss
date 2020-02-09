@@ -6,4 +6,13 @@
   border-radius: $input-border-radius;
   border: $input-border-width solid $input-border-color;
   resize: vertical;
+
+  &__error {
+    position: absolute;
+    bottom: -9px;
+    left: 6px;
+
+    color: $error-red;
+    font-size: 14px;
+  }
 }

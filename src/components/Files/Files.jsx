@@ -7,6 +7,10 @@ import { removeFile } from '../../store/actions/form';
 export const Files = () => {
   const dispatch = useDispatch();
   const files = useSelector(state => state.form.files);
+  const error = useSelector(state => state.form.errors.files);
+
+  const showError = Boolean(error) && Boolean(files.length);
+
   const handleRemoveFile = (fileName) => () => dispatch(removeFile(fileName));
 
   return (
@@ -18,6 +22,7 @@ export const Files = () => {
           onRemove={handleRemoveFile(file.name)}
         />
       ))}
+      {showError && <span className="files__error">{error}</span>}
     </div>
   );
 };

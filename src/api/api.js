@@ -1,17 +1,10 @@
 import Sendsay from 'sendsay-api';
-import { config } from '../appConfig';
+import { ENV } from '../config';
 
 export const initApi = () => {
-  const api = new Sendsay({ apiKey: config.API_KEY });
-
-  const testRequest = {
-    action: 'sys.settings.get',
-    list: ['about.id'],
-  };
-
-  api
-    .request(testRequest)
-    .then(res => console.log(res));
+  const api = new Sendsay({
+    apiKey: ENV.API_KEY,
+  });
 
   return api;
 };
