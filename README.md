@@ -1,4 +1,4 @@
-Test project
+Тестовое sendsay. Не завершено полностью.
 
 ## Available Scripts
 
